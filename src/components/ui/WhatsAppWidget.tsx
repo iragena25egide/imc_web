@@ -9,7 +9,7 @@ export default function WhatsAppWidget({ dict }: { dict?: any }) {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState("");
 
-  const phoneNumber = "250788000000"; // Replace with actual number
+  const phoneNumber = "250781579376"; // Updated actual number
 
   const handleSend = (e: React.FormEvent) => {
     e.preventDefault();
