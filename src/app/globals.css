@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #0f172a;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-imc-blue: #004B98;
+  --color-imc-blue-light: #0062C4;
+  --color-imc-blue-dark: #00366D;
+  --color-imc-gold: #EAB308;
+  --font-sans: var(--font-libre-franklin), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-libre-franklin), ui-sans-serif, system-ui, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0f172a;
+    --foreground: #f8fafc;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 14px;
+}
+
+@layer utilities {
+  .bg-mountain-pattern {
+    background-image: url('/mountain-pattern.png');
+    background-repeat: repeat;
+    background-size: 300px auto;
+  }
+}

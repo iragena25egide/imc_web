@@ -1,0 +1,206 @@
+{
+  "navigation": {
+    "home": "Ahabanza",
+    "about": "Abo Turi Bo",
+    "operations": "Ibyo Dukora",
+    "gallery": "Amafoto",
+    "galleryImages": "Amafoto",
+    "galleryVideos": "Amashusho",
+    "news": "Amakuru",
+    "publication": "Inyandiko",
+    "contact": "Twandikire"
+  },
+  "whatsapp": {
+    "status": "Asubiza ako kanya",
+    "greeting": "Muraho! 👋\n\nIkaze muri Interafrican Mining Corporation. Twabafasha iki uyu munsi?",
+    "time": "Nonaha",
+    "placeholder": "Andika ubutumwa..."
+  },
+  "hero": {
+    "title_part1": "Gushaka ",
+    "title_highlight1": "Agaciro",
+    "title_part2": ", Guteza Imbere ",
+    "title_highlight2": "Abaturage.",
+    "subtitle": "Interafrican Mining Corporation (IMC) - Ubucukuzi bw'amabuye y'agaciro bw'indashyikirwa mu Karere ka Muhanga, u Rwanda, bwiyemeje gukora neza no kurengera ibidukikije.",
+    "cta_primary": "Menya IMC",
+    "cta_secondary": "Twandikire"
+  },
+  "about": {
+    "title": "Ibitwerekeyeho",
+    "heading": "Interafrican Mining Corporation",
+    "description1": "IMC Ltd ni sosiyete nyarwanda y'ubucukuzi bw'amabuye y'agaciro ikora ibikorwa byo gushakisha, guteza imbere, gucukura, no gutunganya umutungo kamere. Icyicaro gikuru cya sosiyete giherereye i Kigali, mu gace ka Gatenga, naho ibikorwa byayo by'ubucukuzi bikorerwa mu Murenge wa Kabacuzi, mu Karere ka Muhanga.",
+    "description2": "Twibanda ahanini ku gucukura no gutunganya gasegereti (tin) ndetse na coltan (tantalum), ari yo mabuye y'agaciro y'ingenzi agira uruhare runini mu iterambere ry'ubukungu bw'igihugu ndetse n'inganda z'ikoranabuhanga ku isi.",
+    "features": [
+      {
+        "name": "Inshingano Yacu",
+        "description": "Guteza imbere imibereho binyuze mu gucukura no gutunganya amabuye y'agaciro mu buryo burambye."
+      },
+      {
+        "name": "Icyerekezo Cyacu",
+        "description": "Kuba sosiyete y'ubucukuzi bw'amabuye y'agaciro y'indashyikirwa kandi irambye, izwiho gukora neza mu mutekano, umusaruro, kurengera ibidukikije, no guteza imbere abantu n'abaturage aho dukorera hose."
+      },
+      {
+        "name": "Indangagaciro Zacu",
+        "description": "Umutekano mbere na mbere, kurengera ibidukikije, ubudahemuka, no guteza imbere abaturage niyo shingiro rya buri gikorwa muri IMC."
+      }
+    ]
+  },
+  "operations": {
+    "title": "Ibyo Dukora",
+    "heading": "Urunigi rw'Agaciro rw'Ubucukuzi",
+    "location1": "Akarere ka Muhanga",
+    "location2": "Umurenge wa Kabacuzi",
+    "step1": "1. Gucukura",
+    "step2": "2. Gutunganya",
+    "step3": "3. Gutwara",
+    "step4": "4. Kohereza hanze"
+  },
+  "footer": {
+    "desc": "Interafrican Mining Corporation. Ikiyoboye mu bikorwa by'ubucukuzi bw'amabuye y'agaciro birambye kandi byizewe mu mutima w'u Rwanda.",
+    "links": "Aho wanyura vuba",
+    "contact": "Twandikire",
+    "location1": "HQ: Gatenga, Umujyi wa Kigali",
+    "location2": "Operations: Umurenge wa Kabacuzi, Akarere ka Muhanga",
+    "email": "interafricancorporation1@gmail.com",
+    "phone": "+250 781 579 376",
+    "rights": "Uburenganzira bwose burabitswe."
+  },
+  "meta": {
+    "title": "Interafrican Mining Corporation | Ubucukuzi Burambye mu Rwanda",
+    "description": "Interafrican Mining Corporation (IMC) ni ikigo cy'ubucukuzi bw'amabuye y'agaciro kiyoboye gikorera mu Karere ka Muhanga, u Rwanda, cyiyemeje gukora neza no kurengera ibidukikije."
+  },
+  "companyBackground": {
+    "subtitle": "Amateka Yacu",
+    "title": "Amavu n'Amavuko",
+    "p1": "IMC Ltd ni sosiyete nyarwanda y'ubucukuzi bw'amabuye y'agaciro ikora ibikorwa byo gushakisha, guteza imbere, gucukura, no gutunganya umutungo kamere. Icyicaro gikuru cya sosiyete giherereye i Kigali, mu gace ka Gatenga, naho ibikorwa byayo by'ubucukuzi bikorerwa mu Murenge wa Kabacuzi, mu Karere ka Muhanga.",
+    "card1Title": "Amabuye y'Agaciro y'Ingenzi",
+    "card1Desc": "Twibanda ahanini ku gucukura no gutunganya gasegereti (tin) ndetse na coltan (tantalum), ari yo mabuye y'agaciro y'ingenzi agira uruhare runini mu iterambere ry'ubukungu bw'igihugu ndetse n'inganda z'ikoranabuhanga ku isi.",
+    "card2Title": "Gushakisha n'Igihe Kizaza",
+    "card2Desc": "Ibikorwa byo gushakisha biherutse gukorwa byagaragaje ko hari amabuye arimo lithium yizewe. Kuba hari lithium byongera agaciro ka konzesiyo yacu, bitewe n'uko ikenewe cyane ku rwego rw'isi mu gukora batiri zongera umuriro, imodoka z'amashanyarazi, n'ububiko bw'ingufu zisubiramo.",
+    "p2": "Sosiyete ikora ibikorwa by'ubucukuzi binyuze mu gushakisha mu buryo bwimbitse, guteza imbere ibirombe, gucukura munsi y'ubutaka, gutunganya amabuye y'agaciro, no kugurisha ibicuruzwa by'amabuye y'agaciro. Dukorera ku Ruhushya rw'Ubucukuzi rw'Imyaka 10 rwatanzwe kuva mu 2023 kugeza mu 2033 hakurikijwe amategeko n'amabwiriza y'ubucukuzi bw'amabuye y'agaciro mu Rwanda. Uru ruhushya ruha IMC Ltd uburenganzira bwo gukora ibikorwa byose by'ubucukuzi mu gace kayo mu gihe yubahiriza ibisabwa n'amategeko, amabwiriza y'ibidukikije, ndetse n'inshingano z'ubuzima n'umutekano mu kazi.",
+    "p3": "IMC Ltd yiyemeje gukora ubucukuzi burambye buringaniza iterambere ry'ubukungu no kurengera ibidukikije ndetse n'inshingano mbonezamubano. Sosiyete ishyira imbere ishyirwa mu bikorwa ry'umutekano mu kazi, uburyo bwiza bwo gukora umusaruro, imicungire myiza y'ibidukikije, no kongerera ubushobozi abakozi bayo. Binyuze muri ibi byemezo, IMC Ltd ishaka kubyaza umusaruro ntarengwa umutungo kamere mu gihe igabanya ingaruka ku bidukikije kandi igira uruhare rwiza ku mibereho y'abaturage bayikikije.",
+    "p4": "Nka kimwe mu bigize ingamba zayo z'iterambere ry'igihe kirekire, IMC Ltd ikomeje gushora imari mu gushakisha mu bya jeyolojiya, isuzuma ry'umutungo, iterambere ry'ibikorwaremezo by'ibirombe, no kunoza imikorere kugira ngo habeho imikoreshereze irambye y'umutungo kamere mu gihe cy'uruhushya n'ahazaza. Sosiyete ifite intego yo kwiyubaka nk'umucukuzi w'indashyikirwa wa gasegereti, coltan, n'ibicuruzwa bya lithium mu gihe kizaza mu rwego rw'ubucukuzi bw'amabuye y'agaciro mu Rwanda."
+  },
+  "stats": {
+    "employees": "Abakozi",
+    "sites": "Aho Ducukura",
+    "tons": "Toni Zicukuwe",
+    "years": "Imyaka y'Uburambe"
+  },
+  "board": {
+    "subtitle": "Ubuyobozi",
+    "title": "Inama y'Ubutegetsi",
+    "roles": {
+      "managingDirector": "Umuyobozi Mukuru",
+      "mineManager": "Umuyobozi w'Ikirombe",
+      "siteManager": "Umuyobozi w'Aho Dukorera",
+      "mineOperationManager": "Umuyobozi Ushinzwe Ibikorwa",
+      "chiefOfSecurity": "Umukuru w'Umutekano"
+    }
+  },
+  "cookieBanner": {
+    "text": "Dukoresha cookies kugira ngo tunoze imikorere y'urubuga, gusesengura abasura urubuga, n'ibindi bikorwa bya Interafrican Mining Corporation.",
+    "policy": "Amabwiriza ya Cookie",
+    "accept": "Emeza zose",
+    "decline": "Hakana zose",
+    "preferences": "Amahitamo"
+  },
+  "gallery": {
+    "subtitle": "Ibikorwa Byacu",
+    "title": "Amafoto n'Amashusho",
+    "viewAll": "Reba Amafoto Yose",
+    "tabImages": "Amafoto",
+    "tabVideos": "Amashusho",
+    "modalDesc": "Iki kintu kigaragaza neza ibikorwa byacu bya buri munsi n'uburyo twiyemeje gukora neza, kurengera ibidukikije, ndetse n'iterambere ry'abaturage.",
+    "videos": {
+      "v1": { "title": "Incamake y'Ubucukuzi", "subtitle": "Filime mbarankuru" },
+      "v2": { "title": "Guteza imbere Abaturage", "subtitle": "Ibikorwa" },
+      "v3": { "title": "Umutekano Mbere ya Byose", "subtitle": "Amahugurwa" }
+    },
+    "items": {
+      "casetelite": { "title": "Umusaruro wa Gasegereti", "subtitle": "Amabuye y'agaciro" },
+      "tunnel": { "title": "Ikirombe cyo Kuzimu", "subtitle": "Ubucukuzi" },
+      "workers": { "title": "Ikipe yacu", "subtitle": "Abakozi" },
+      "igisubizo": { "title": "Ikirombe Igisubizo", "subtitle": "Ibikorwa" },
+      "workImc": { "title": "Ibikorwa Bikomeje", "subtitle": "Akazi" },
+      "tools": { "title": "Ibikoresho by'Ubucukuzi", "subtitle": "Ibikoresho" },
+      "market": { "title": "Isoko ry'Amabuye", "subtitle": "Ubucuruzi" },
+      "tool": { "title": "Ibikoresho Kabuhariwe", "subtitle": "Imashini" },
+      "events": { "title": "Ibirori by'Ikigo", "subtitle": "Umuryango" }
+    }
+  },
+  "headers": {
+    "about": { "title": "Abo Turi Bo", "desc": "Menya urugendo rwacu, intego, ndetse n'umuhate wacu mu bucukuzi burambye mu Rwanda." },
+    "contact": { "title": "Twandikire", "desc": "Vugana n'ikipe yacu ku bibazo, ubufatanye, n'andi makuru." },
+    "gallery": { "title": "Amafoto", "desc": "Urugendo mu mafoto rwerekana ibikorwa byacu, ibikoresho, ndetse n'ibikorwa by'iterambere mu baturage." },
+    "news": { "title": "Amakuru y'Ikigo", "desc": "Kurikirana amakuru agezweho n'ibindi bikorwa bishya bya IMC." },
+    "publication": { "title": "Inyandiko n'Ama raporo", "desc": "Soma raporo zacu n'izindi nyandiko z'ubushakashatsi." }
+  },
+  "newsData": {
+    "subtitle": "Amakuru Agezweho",
+    "title": "Amakuru y'Ikigo",
+    "viewAll": "Reba Amakuru Yose",
+    "readMore": "Soma Bindi",
+    "articles": [
+      {
+        "slug": "imc-10-year-mining-license",
+        "title": "IMC Yahawe Uruhushya rw'Imyaka 10",
+        "date": "15 Werurwe 2024",
+        "excerpt": "Interafrican Mining Corporation yahawe uruhushya rw'imyaka 10 rwo gucukura amabuye y'agaciro mu Murenge wa Kabacuzi.",
+        "content": "Interafrican Mining Corporation (IMC) ifite ishema ryo gutangaza ko yahawe Uruhushya Rushya rw'Imyaka 10 rwo Gucukura n'ubuyobozi bw'u Rwanda. Uru ruhushya ruzageza mu 2033, ruremera ibikorwa by'igihe kirekire byo gucukura gasegereti na coltan mu Murenge wa Kabacuzi, mu Karere ka Muhanga.\n\nIyi ntambwe igaragaza ko twubahiriza amategeko y'u Rwanda ndetse n'amabwiriza yo kurengera ibidukikije. Kuri ubu, IMC irateganya gushora imari mu ikoranabuhanga ryo gucukura mu kuzimu n'ibikorwaremezo by'ibanze."
+      },
+      {
+        "slug": "lithium-exploration-commences",
+        "title": "Ubushakashatsi bushya bwa Lithium Buratangiye",
+        "date": "10 Nzeri 2024",
+        "excerpt": "Amakipe y'abahanga mu by'ubutaka yatangiye ubushakashatsi kuri Lithium.",
+        "content": "Nyuma y'ubushakashatsi bw'ibanze, IMC yatangiye ibikorwa byimbitse byo gushaka Lithium mu gice cyacu. Uko isi igenda ikenera cyane imodoka zikoresha amashanyarazi n'ingufu zisubiramo, gushaka amabuye y'agaciro nka lithium ni iby'ibanze.\n\nAmakipe yacu y'abahanga mu by'ubutaka arimo gukora ibikorwa byo gucukura kugira ngo asuzume ingano y'umutungo uri mu butaka. Ibimenyetso by'ibanze bitanga icyizere, kandi twiteguye gusangiza ibyavuyemo mu mezi ari imbere."
+      },
+      {
+        "slug": "community-education-scholarships",
+        "title": "IMC Yatanze Buruse 50 z'Ubumenyi",
+        "date": "22 Mutarama 2025",
+        "excerpt": "Mu rwego rwo kwerekana ubwitange bwacu ku baturage ba Muhanga, twatanze buruse kuri abanyeshuri 50 bo mu gace.",
+        "content": "Uburezi ni ishingiro ry'iterambere rirambye. Ku murongo w'intego yacu yo kongerera ubushobozi abaturage b'ibanze, IMC yatangije gahunda yo gutera inkunga uburezi, itanga buruse yuzuye ku banyeshuri 50 b'abanyempano bo mu Karere ka Muhanga kugira ngo bige ibijyanye n'ubucukuzi n'ubwubatsi muri kaminuza zikomeye mu Rwanda.\n\nBuruse ikubiyemo amafaranga y'ishuri, icumbi, kandi inatanga amafaranga yo kwikemurira ibibazo bya buri kwezi. Byongeye kandi, abanyeshuri bazahabwa amahirwe yo kwimenyereza umwuga muri IMC bahembwa mu byumweru by'ibiruhuko."
+      },
+      {
+        "slug": "zero-incident-safety-milestone",
+        "title": "Umwaka Umwe Nta Mpanuka Ikomeye",
+        "date": "05 Ukuboza 2025",
+        "excerpt": "Umutekano mbere na mbere ukomeza kuba indangagaciro yacu mu gihe twizihiza umwaka wose w'ibikorwa nta mpanuka ikomeye yabaye.",
+        "content": "IMC ifite ishema ryo gutangaza ko twageze ku ntambwe ikomeye: umwaka wose nta mpanuka igabanya igihe cy'akazi (LTIs) mu byiciro byacu byose by'ubucukuzi n'itunganywa.\n\nIbi byagezweho ni gihamya cy'amabwiriza yacu akomeye y'umutekano, gahunda z'amahugurwa zihoraho, ndetse n'ubwitange bwa buri mukozi wese mu gushyira umutekano imbere y'ibindi byose. Tuzakomeza gushora imari mu bikoresho by'umutekano bigezweho n'amahugurwa kugira ngo buri mukozi atahe amahoro."
+      }
+    ]
+  },
+  "publicationData": {
+    "subtitle": "Inyandiko",
+    "title": "Inyandiko n'Ama raporo",
+    "viewAll": "Reba Byose",
+    "items": [
+      {
+        "title": "Raporo Y'iterambere Rirambye ya 2025",
+        "category": "Iterambere Rirambye",
+        "size": "2.4 MB PDF",
+        "fileUrl": "/docs/sustainability-report-2025.pdf"
+      },
+      {
+        "title": "Ubushakashatsi Bw'ubutaka: Amabuye mu Karere ka Muhanga",
+        "category": "Ubushakashatsi",
+        "size": "4.1 MB PDF",
+        "fileUrl": "/docs/geological-survey-muhanga.pdf"
+      },
+      {
+        "title": "Gahunda Y'iterambere Ry'abaturage 2026-2030",
+        "category": "Politiki",
+        "size": "1.8 MB PDF",
+        "fileUrl": "/docs/community-development-framework.pdf"
+      },
+      {
+        "title": "Amabwiriza y'Ubuzima n'Umutekano mu Kazi",
+        "category": "Umutekano",
+        "size": "1.2 MB PDF",
+        "fileUrl": "/docs/health-safety-guidelines.pdf"
+      }
+    ]
+  }
+}

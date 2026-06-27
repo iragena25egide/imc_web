@@ -1,0 +1,206 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About Us",
+    "operations": "Operations",
+    "gallery": "Gallery",
+    "galleryImages": "Images",
+    "galleryVideos": "Videos",
+    "news": "News",
+    "publication": "Publication",
+    "contact": "Contact Us"
+  },
+  "whatsapp": {
+    "status": "Typically replies instantly",
+    "greeting": "Hello there! 👋\n\nWelcome to Interafrican Mining Corporation. How can we help you today?",
+    "time": "Just now",
+    "placeholder": "Type a message..."
+  },
+  "hero": {
+    "title_part1": "Unearthing ",
+    "title_highlight1": "Value",
+    "title_part2": ", Sustaining ",
+    "title_highlight2": "Communities.",
+    "subtitle": "Interafrican Mining Corporation (IMC) - Premier mining operations in Muhanga District, Rwanda, committed to excellence and environmental stewardship.",
+    "cta_primary": "Discover IMC",
+    "cta_secondary": "Contact Us"
+  },
+  "about": {
+    "title": "About Us",
+    "heading": "Interafrican Mining Corporation",
+    "description1": "IMC Ltd is a Rwandan mining company engaged in the exploration, development, extraction, and processing of mineral resources. The company's headquarters are located in Kigali, while its mining operations are conducted in Kabacuzi Sector, Muhanga District.",
+    "description2": "We primarily focus on the extraction and production of tin (cassiterite) and tantalum-bearing minerals (coltan), which are among the strategic minerals contributing significantly to both national economic development and global technological industries.",
+    "features": [
+      {
+        "name": "Our Mission",
+        "description": "To transform livelihoods by mining and processing minerals in sustainable manner."
+      },
+      {
+        "name": "Our Vision",
+        "description": "To be a leading and sustainable mining company, recognized for excellence in safety, productivity, environmental responsibility, and the development of people and communities wherever we operate."
+      },
+      {
+        "name": "Core Values",
+        "description": "Safety first, environmental stewardship, integrity, and community empowerment form the foundation of every operation at IMC."
+      }
+    ]
+  },
+  "operations": {
+    "title": "Our Operations",
+    "heading": "The Mining Value Chain",
+    "location1": "Muhanga District",
+    "location2": "Kabacuzi Sector",
+    "step1": "1. Extraction",
+    "step2": "2. Processing",
+    "step3": "3. Transport",
+    "step4": "4. Export"
+  },
+  "footer": {
+    "desc": "Interafrican Mining Corporation. Leading sustainable and responsible mining operations in the heart of Rwanda.",
+    "links": "Quick Links",
+    "contact": "Contact Us",
+    "location1": "HQ: Gatenga, Kigali City",
+    "location2": "Operations: Kabacuzi Sector, Muhanga District",
+    "email": "interafricancorporation1@gmail.com",
+    "phone": "+250 781 579 376",
+    "rights": "All rights reserved."
+  },
+  "meta": {
+    "title": "Interafrican Mining Corporation | Sustainable Mining in Rwanda",
+    "description": "Interafrican Mining Corporation (IMC) is a premier mining company operating in Muhanga District, Rwanda, committed to excellence and environmental stewardship."
+  },
+  "companyBackground": {
+    "subtitle": "Our Story",
+    "title": "Company Background",
+    "p1": "IMC Ltd is a Rwandan mining company engaged in the exploration, development, extraction, and processing of mineral resources. The company's headquarters are located in Kigali, specifically in the Gatenga area, while its mining operations are conducted in Kabacuzi Sector, within Muhanga District.",
+    "card1Title": "Strategic Minerals",
+    "card1Desc": "We primarily focus on the extraction and production of tin (cassiterite) and tantalum-bearing minerals (coltan), which are strategic minerals contributing significantly to both national economic development and global technological industries.",
+    "card2Title": "Exploration & Future",
+    "card2Desc": "Recent exploration activities have identified promising lithium-bearing pegmatite mineralization. The presence of lithium enhances the strategic importance of our concession, given the increasing global demand for critical minerals used in rechargeable batteries, EVs, and renewable energy storage.",
+    "p2": "The company undertakes mining activities through systematic exploration, mine development, underground extraction, mineral processing, and marketing of mineral products. We operate under a 10-year Mining License granted from 2023 to 2033 in accordance with the mining laws and regulations of Rwanda. This license authorizes IMC Ltd to conduct all mining activities within its concession area while maintaining compliance with regulatory requirements, environmental standards, and occupational health and safety obligations.",
+    "p3": "IMC Ltd is committed to sustainable mining practices that balance economic growth with environmental protection and social responsibility. The company emphasizes the implementation of safe working conditions, efficient production systems, responsible environmental management, and continuous capacity building of its workforce. Through these commitments, IMC Ltd seeks to maximize resource recovery while minimizing environmental impacts and contributing positively to the welfare of surrounding communities.",
+    "p4": "As part of its long-term development strategy, IMC Ltd continues to invest in geological exploration, resource evaluation, mine infrastructure development, and operational improvements to ensure the sustainable utilization of mineral resources throughout the license period and beyond. The company aims to establish itself as a leading producer of tin, tantalum, and future lithium products within Rwanda's mining sector."
+  },
+  "stats": {
+    "employees": "Employees",
+    "sites": "Active Sites",
+    "tons": "Tons Extracted",
+    "years": "Years Excellence"
+  },
+  "board": {
+    "subtitle": "Leadership",
+    "title": "Board of Directors",
+    "roles": {
+      "managingDirector": "Managing Director",
+      "mineManager": "Mine Manager",
+      "siteManager": "Site Manager",
+      "mineOperationManager": "Mine Operation Manager",
+      "chiefOfSecurity": "Chief of Security"
+    }
+  },
+  "cookieBanner": {
+    "text": "We use cookies to improve your experience, analyze traffic, and process enquiries for Interafrican Mining Corporation.",
+    "policy": "Cookie policy",
+    "accept": "Accept all",
+    "decline": "Decline all",
+    "preferences": "Preferences"
+  },
+  "gallery": {
+    "subtitle": "Our Operations",
+    "title": "Photo Gallery",
+    "viewAll": "View All Photos",
+    "tabImages": "Images",
+    "tabVideos": "Videos",
+    "modalDesc": "This item gives a closer look at our daily operations and highlights our commitment to excellence, sustainability, and community progress across our facilities.",
+    "videos": {
+      "v1": { "title": "Mining Process Overview", "subtitle": "Documentary" },
+      "v2": { "title": "Community Impact", "subtitle": "Initiatives" },
+      "v3": { "title": "Safety First", "subtitle": "Training" }
+    },
+    "items": {
+      "casetelite": { "title": "Cassiterite Production", "subtitle": "Minerals" },
+      "tunnel": { "title": "Underground Tunnel", "subtitle": "Extraction" },
+      "workers": { "title": "Our Mining Team", "subtitle": "Workforce" },
+      "igisubizo": { "title": "Igisubizo Tunnel", "subtitle": "Operations" },
+      "workImc": { "title": "Active Operations", "subtitle": "Site Work" },
+      "tools": { "title": "Mining Equipment", "subtitle": "Tools" },
+      "market": { "title": "Mineral Market", "subtitle": "Commercialization" },
+      "tool": { "title": "Precision Tools", "subtitle": "Equipment" },
+      "events": { "title": "Company Events", "subtitle": "Community" }
+    }
+  },
+  "headers": {
+    "about": { "title": "About Us", "desc": "Learn about our journey, mission, and commitment to sustainable mining in Rwanda." },
+    "contact": { "title": "Contact Us", "desc": "Get in touch with our team for inquiries, partnerships, and more information." },
+    "gallery": { "title": "Photo Gallery", "desc": "A visual journey through our mining operations, facilities, and community initiatives." },
+    "news": { "title": "Company News", "desc": "Stay updated with the latest news, announcements, and developments at IMC." },
+    "publication": { "title": "Publications", "desc": "Access our reports, surveys, and framework documents." }
+  },
+  "newsData": {
+    "subtitle": "Latest Updates",
+    "title": "Company News",
+    "viewAll": "View All News",
+    "readMore": "Read More",
+    "articles": [
+      {
+        "slug": "imc-10-year-mining-license",
+        "title": "IMC Granted 10-Year Mining License",
+        "date": "March 15, 2024",
+        "excerpt": "Interafrican Mining Corporation has officially secured a 10-year mining license to expand extraction operations in the Kabacuzi Sector.",
+        "content": "Interafrican Mining Corporation (IMC) is proud to announce the receipt of a new 10-year Mining License from the Government of Rwanda. Valid through 2033, this license authorizes the long-term extraction and processing of cassiterite and coltan in the Kabacuzi Sector, Muhanga District.\n\nThis milestone is a testament to our strict adherence to Rwanda's regulatory framework and environmental standards. With this long-term security, IMC plans to invest heavily in underground extraction technologies and local infrastructure."
+      },
+      {
+        "slug": "lithium-exploration-commences",
+        "title": "New Lithium Exploration Commences",
+        "date": "September 10, 2024",
+        "excerpt": "Geological teams have identified promising lithium-bearing pegmatite mineralization, launching our first official lithium exploration phase.",
+        "content": "Following extensive preliminary surveys, IMC has officially commenced deep exploration activities targeting lithium-bearing pegmatite mineralization within our concession. As global demand for electric vehicles and renewable energy storage surges, identifying and extracting critical minerals like lithium is a top priority.\n\nOur geological teams are currently executing a multi-phase drilling program to evaluate the resource volume. Early indicators are highly promising, and we look forward to sharing comprehensive assay results in the coming months."
+      },
+      {
+        "slug": "community-education-scholarships",
+        "title": "IMC Awards 50 Engineering Scholarships",
+        "date": "January 22, 2025",
+        "excerpt": "Demonstrating our commitment to the Muhanga community, we have awarded full university scholarships to 50 local engineering students.",
+        "content": "Education is the foundation of sustainable development. In line with our mission to empower local communities, IMC has launched a comprehensive education sponsorship program, granting full scholarships to 50 talented students from the Muhanga District to study mining and civil engineering at top Rwandan universities.\n\nThe scholarship covers full tuition, accommodation, and provides a monthly stipend. Furthermore, students will have the opportunity to participate in paid internships at IMC during their summer breaks, gaining invaluable hands-on experience."
+      },
+      {
+        "slug": "zero-incident-safety-milestone",
+        "title": "One Year of Zero-Incident Operations",
+        "date": "December 05, 2025",
+        "excerpt": "Safety first remains our core value as we celebrate a full year of incident-free operations across all sites.",
+        "content": "IMC is incredibly proud to announce that we have achieved a major milestone: one full year of zero lost-time incidents (LTIs) across all our mining and processing sites.\n\nThis achievement is a testament to our rigorous safety protocols, regular training programs, and the dedication of every single employee to prioritize safety above all else. We will continue to invest in advanced safety equipment and continuous training to ensure every team member returns home safely at the end of their shift."
+      }
+    ]
+  },
+  "publicationData": {
+    "subtitle": "Resources",
+    "title": "Publications & Reports",
+    "viewAll": "View All",
+    "items": [
+      {
+        "title": "2025 Annual Sustainability Report",
+        "category": "Sustainability",
+        "size": "2.4 MB PDF",
+        "fileUrl": "/docs/sustainability-report-2025.pdf"
+      },
+      {
+        "title": "Geological Survey: Muhanga District Minerals",
+        "category": "Research",
+        "size": "4.1 MB PDF",
+        "fileUrl": "/docs/geological-survey-muhanga.pdf"
+      },
+      {
+        "title": "Community Development Framework 2026-2030",
+        "category": "Policy",
+        "size": "1.8 MB PDF",
+        "fileUrl": "/docs/community-development-framework.pdf"
+      },
+      {
+        "title": "Occupational Health & Safety Guidelines",
+        "category": "Safety",
+        "size": "1.2 MB PDF",
+        "fileUrl": "/docs/health-safety-guidelines.pdf"
+      }
+    ]
+  }
+}
