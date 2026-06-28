@@ -137,26 +137,26 @@ export default function Navbar({
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 overflow-hidden shadow-xl"
+            className="lg:hidden bg-white border-b border-slate-200 overflow-hidden shadow-2xl relative z-50"
           >
-            <div className="px-4 pt-2 pb-6 space-y-2 flex flex-col">
+            <div className="px-4 pt-4 pb-8 space-y-2 flex flex-col bg-white">
               {navLinks.map((link) => (
                 <div key={link.name}>
                   <Link
                     href={link.href}
                     onClick={() => !link.hasDropdown && setIsOpen(false)}
-                    className="flex justify-between items-center px-3 py-3 text-sm font-medium tracking-widest uppercase text-slate-700 dark:text-slate-300 hover:text-imc-blue dark:hover:text-imc-gold hover:bg-slate-50 dark:hover:bg-slate-800 rounded-md"
+                    className="flex justify-between items-center px-4 py-3 text-sm font-bold tracking-widest uppercase text-slate-800 hover:text-imc-blue hover:bg-slate-50 rounded-lg transition-colors"
                   >
                     {link.name}
                   </Link>
                   {link.hasDropdown && (
-                    <div className="pl-6 flex flex-col gap-1 border-l-2 border-slate-100 ml-4 mt-1">
+                    <div className="pl-6 flex flex-col gap-1 border-l-2 border-slate-200 ml-4 mt-2 mb-2">
                       {link.dropdownItems?.map((item) => (
                         <Link
                           key={item.name}
                           href={item.href}
                           onClick={() => setIsOpen(false)}
-                          className="block px-3 py-2 text-xs tracking-widest uppercase text-slate-500 hover:text-imc-blue transition-colors"
+                          className="block px-3 py-2 text-xs font-bold tracking-widest uppercase text-slate-500 hover:text-imc-blue transition-colors"
                         >
                           {item.name}
                         </Link>

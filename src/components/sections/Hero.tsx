@@ -89,18 +89,18 @@ export default function Hero({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-6 justify-start"
+            className="flex flex-row flex-wrap gap-4 md:gap-6 justify-start mt-4"
           >
             <a
               href={`/${lang}#about`}
-              className="inline-flex items-center justify-center px-8 py-4 text-sm font-bold tracking-widest uppercase text-white bg-imc-blue hover:bg-imc-blue-light rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(30,58,138,0.5)]"
+              className="inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-4 text-xs md:text-sm font-bold tracking-widest uppercase text-white bg-imc-blue hover:bg-imc-blue-light rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(30,58,138,0.5)]"
             >
               {dict?.cta_primary || "Discover IMC"}
-              <ArrowRight className="ml-3" size={18} />
+              <ArrowRight className="ml-2 md:ml-3 h-4 w-4 md:h-5 md:w-5" />
             </a>
             <a
               href={`/${lang}/contact`}
-              className="inline-flex items-center justify-center px-8 py-4 text-sm font-bold tracking-widest uppercase text-white bg-transparent border-2 border-white hover:bg-white/10 rounded-full transition-all duration-300 shadow-md backdrop-blur-sm"
+              className="inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-4 text-xs md:text-sm font-bold tracking-widest uppercase text-white bg-transparent border-2 border-white hover:bg-white/10 rounded-full transition-all duration-300 shadow-md backdrop-blur-sm"
             >
               {dict?.cta_secondary || "Contact Us"}
             </a>
