@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const backgroundImages = [
   "/images/gallery/casetelite.jpg",
-  "/images/gallery/workers.jpg",
+  "/tun.jpg",
   "/images/gallery/work imc.jpg"
 ];
 

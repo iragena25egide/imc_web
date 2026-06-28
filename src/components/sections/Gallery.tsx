@@ -64,6 +64,11 @@ export default function Gallery({
       title: dict?.items?.events?.title || "Company Events",
       subtitle: dict?.items?.events?.subtitle || "Community",
     },
+    {
+      src: "/certificate.jpeg",
+      title: dict?.items?.certificate?.title || "Company Certificate",
+      subtitle: dict?.items?.certificate?.subtitle || "Certification",
+    },
   ];
 
   // For demonstration, using same images as placeholders but flag them as video format in actual use
