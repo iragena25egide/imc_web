@@ -58,22 +58,6 @@ export default function Hero({
 
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-start justify-center w-full pt-20 pb-16 lg:pb-32 text-left h-full min-h-screen">
         <div className="flex-1 flex flex-col items-start max-w-3xl mt-20">
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl md:text-5xl lg:text-7xl font-heading font-bold text-white tracking-tight mb-6 drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)]"
-          >
-            {dict?.title_part1 || "Unearthing "}
-            <span className="text-imc-gold drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)]">
-              {dict?.title_highlight1 || "Value,"}
-            </span>
-            <br className="hidden md:block" />
-            {dict?.title_part2 || "Sustaining "}
-            <span className="text-white drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)]">
-              {dict?.title_highlight2 || "Communities."}
-            </span>
-          </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
