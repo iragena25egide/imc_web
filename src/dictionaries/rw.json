@@ -113,9 +113,9 @@
     "tabVideos": "Amashusho",
     "modalDesc": "Iki kintu kigaragaza neza ibikorwa byacu bya buri munsi n'uburyo twiyemeje gukora neza, kurengera ibidukikije, ndetse n'iterambere ry'abaturage.",
     "videos": {
-      "v1": { "title": "Incamake y'Ubucukuzi", "subtitle": "Filime mbarankuru" },
-      "v2": { "title": "Guteza imbere Abaturage", "subtitle": "Ibikorwa" },
-      "v3": { "title": "Umutekano Mbere ya Byose", "subtitle": "Amahugurwa" }
+      "v1": { "title": "RWANDA: IBIROMBE BY'AMABUYE Y'AGACIRO BIKIZA ABABITURIYE?", "subtitle": "UBUHAMYA BW'ABATURANYE NA IMC & COMAR" },
+      "v2": { "title": "MUHANGA: BISHIMIYE IMIGOZI Y'IBIJUMBA BIVAMO AMANDAZI NA BISWI", "subtitle": "AKARERE KABAHAYE KU NKUNGA YA IMC" },
+      "v3": { "title": "DORE INDANI NZIZA // KOMPANYI ZICUKURA AMABUYE Y'AGACIRO MU RWANDA", "subtitle": "ZIRAKATAJE MU GUTUNGANYA MINE" }
     },
     "items": {
       "casetelite": { "title": "Umusaruro wa Gasegereti", "subtitle": "Amabuye y'agaciro" },

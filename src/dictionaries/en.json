@@ -113,9 +113,9 @@
     "tabVideos": "Videos",
     "modalDesc": "This item gives a closer look at our daily operations and highlights our commitment to excellence, sustainability, and community progress across our facilities.",
     "videos": {
-      "v1": { "title": "Mining Process Overview", "subtitle": "Documentary" },
-      "v2": { "title": "Community Impact", "subtitle": "Initiatives" },
-      "v3": { "title": "Safety First", "subtitle": "Training" }
+      "v1": { "title": "RWANDA: DO MINES ENRICH THEIR NEIGHBORS?", "subtitle": "TESTIMONIES OF IMC & COMAR NEIGHBORS" },
+      "v2": { "title": "MUHANGA: APPRECIATING SWEET POTATO VINES", "subtitle": "DONATED BY THE DISTRICT SPONSORED BY IMC" },
+      "v3": { "title": "LOOK AT THIS BEAUTIFUL INTERIOR", "subtitle": "MINING COMPANIES IN RWANDA ARE STRIVING TO ORGANIZE MINES" }
     },
     "items": {
       "casetelite": { "title": "Cassiterite Production", "subtitle": "Minerals" },

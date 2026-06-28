@@ -70,20 +70,20 @@ export default function Gallery({
   // We'll use the .mp4 format. Since we don't have actual videos, this is structural
   const videoItems = [
     {
-      id: "llTvtkUDn14",
-      src: "https://img.youtube.com/vi/llTvtkUDn14/hqdefault.jpg",
+      id: "5otZfK3zv54",
+      src: "https://img.youtube.com/vi/5otZfK3zv54/hqdefault.jpg",
       title: dict?.videos?.v1?.title || "Mining Process Overview",
       subtitle: dict?.videos?.v1?.subtitle || "Documentary",
     },
     {
-      id: "8OZfsMjQGDc",
-      src: "https://img.youtube.com/vi/8OZfsMjQGDc/hqdefault.jpg",
+      id: "_UKMhL8eBXM",
+      src: "https://img.youtube.com/vi/_UKMhL8eBXM/hqdefault.jpg",
       title: dict?.videos?.v2?.title || "Community Impact",
       subtitle: dict?.videos?.v2?.subtitle || "Initiatives",
     },
     {
-      id: "URPvcREWxrc",
-      src: "https://img.youtube.com/vi/URPvcREWxrc/hqdefault.jpg",
+      id: "syCiyBPRS0Y",
+      src: "https://img.youtube.com/vi/syCiyBPRS0Y/hqdefault.jpg",
       title: dict?.videos?.v3?.title || "Safety First",
       subtitle: dict?.videos?.v3?.subtitle || "Training",
     }

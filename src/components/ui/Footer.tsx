@@ -1,6 +1,14 @@
 import Link from "next/link";
 import { Mail, Phone, MapPin } from "lucide-react";
-export default function Footer({ dict, navDict, lang = "en" }: { dict?: any, navDict?: any, lang?: string }) {
+export default function Footer({
+  dict,
+  navDict,
+  lang = "en",
+}: {
+  dict?: any;
+  navDict?: any;
+  lang?: string;
+}) {
   return (
     <footer className="relative bg-imc-blue-dark text-white pt-12 pb-8 border-t-0 ">
       {/* GetWave SVG Divider at top of footer */}
@@ -21,11 +29,12 @@ export default function Footer({ dict, navDict, lang = "en" }: { dict?: any, nav
               <h2 className="text-lg md:text-xl font-heading font-extrabold tracking-tight text-white uppercase leading-none">
                 Interafrican
                 <br />
-                <span className="text-imc-gold">Mining Corp</span>
+                <span className="text-imc-gold">Mining Corporation</span>
               </h2>
             </div>
             <p className="text-xs text-slate-300 mb-6 max-w-sm leading-relaxed">
-              {dict?.desc || "Interafrican Mining Corporation. Leading sustainable and responsible mining operations in the heart of Rwanda."}
+              {dict?.desc ||
+                "Interafrican Mining Corporation. Leading sustainable and responsible mining operations in the heart of Rwanda."}
             </p>
           </div>
 
@@ -119,7 +128,7 @@ export default function Footer({ dict, navDict, lang = "en" }: { dict?: any, nav
             &copy; {new Date().getFullYear()} Interafrican Mining Corporation.
             {dict?.rights || "All rights reserved."}
           </p>
-          <p className="mt-2 md:mt-0">POWERED BY PIN MEDIA.</p>
+          <p className="mt-2 md:mt-0">POWERED BY PINMEDIA RWANDA LTD.</p>
         </div>
       </div>
     </footer>
