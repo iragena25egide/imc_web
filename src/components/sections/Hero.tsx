@@ -8,7 +8,7 @@ import Image from "next/image";
 const backgroundImages = [
   "/images/gallery/casetelite.jpg",
   "/tun.jpg",
-  "/images/gallery/work imc.jpg"
+  "/images/gallery/work imc.jpg",
 ];
 
 export default function Hero({
@@ -56,14 +56,13 @@ export default function Hero({
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/20 z-10"></div>
       </div>
 
-      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-start justify-center w-full pt-32 md:pt-48 pb-16 lg:pb-32 text-left h-full min-h-screen">
-        <div className="flex-1 flex flex-col items-start max-w-3xl">
-
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-start justify-end w-full pt-32 pb-24 md:pb-36 lg:pb-48 text-left h-full min-h-screen">
+        <div className="flex flex-col items-start max-w-3xl">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-2xl md:text-3xl lg:text-4xl text-white max-w-2xl mb-10 font-sans drop-shadow-lg font-semibold leading-relaxed"
+            className="text-2xl md:text-3xl lg:text-4xl mt-8 text-white max-w-2xl mb-10 font-sans drop-shadow-lg font-semibold leading-relaxed"
           >
             {dict?.subtitle ||
               "Interafrican Mining Corporation (IMC) - Premier mining operations in Muhanga District, Rwanda, committed to excellence and environmental stewardship."}
