@@ -56,14 +56,14 @@ export default function Hero({
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/20 z-10"></div>
       </div>
 
-      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-start justify-center w-full pt-20 pb-16 lg:pb-32 text-left h-full min-h-screen">
-        <div className="flex-1 flex flex-col items-start max-w-3xl mt-20">
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-start justify-center w-full pt-32 md:pt-48 pb-16 lg:pb-32 text-left h-full min-h-screen">
+        <div className="flex-1 flex flex-col items-start max-w-3xl">
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-4 text-xl md:text-2xl text-slate-200 max-w-2xl mb-10 font-sans drop-shadow-md"
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-2xl md:text-3xl lg:text-4xl text-white max-w-2xl mb-10 font-sans drop-shadow-lg font-semibold leading-relaxed"
           >
             {dict?.subtitle ||
               "Interafrican Mining Corporation (IMC) - Premier mining operations in Muhanga District, Rwanda, committed to excellence and environmental stewardship."}
