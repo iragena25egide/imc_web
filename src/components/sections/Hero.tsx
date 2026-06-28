@@ -108,15 +108,15 @@ export default function Hero({
         </div>
       </div>
 
-      {/* GetWave SVG at the bottom - Changed to match the section below */}
+      {/* GetWave SVG at the bottom */}
       <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-20 transform translate-y-[1px]">
         <svg
-          viewBox="0 0 1200 120"
+          viewBox="0 0 1440 120"
           preserveAspectRatio="none"
           className="relative block w-full h-[60px] lg:h-[120px]"
           style={{ fill: "#f8fafc" }}
         >
-          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+          <path d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,42.7C1120,32,1280,32,1360,32L1440,32L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
         </svg>
       </div>
     </section>
