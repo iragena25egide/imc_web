@@ -23,9 +23,9 @@ export default function Footer({
         </svg>
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mt-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-10">
           <div>
-            <div className="mb-6 inline-block">
+            <div className="mb-4 inline-block">
               <h2 className="text-lg md:text-xl font-heading font-extrabold tracking-tight text-white uppercase leading-none">
                 Interafrican
                 <br />
@@ -39,10 +39,10 @@ export default function Footer({
           </div>
 
           <div>
-            <h3 className="font-bold text-xs tracking-widest uppercase mb-5 text-imc-gold">
+            <h3 className="font-bold text-xs tracking-widest uppercase mb-4 text-imc-gold">
               {dict?.links || "Quick Links"}
             </h3>
-            <ul className="space-y-3">
+            <ul className="grid grid-cols-2 gap-y-3 gap-x-4">
               <li>
                 <Link
                   href={`/${lang}#home`}
@@ -95,7 +95,7 @@ export default function Footer({
           </div>
 
           <div>
-            <h3 className="font-bold text-xs tracking-widest uppercase mb-5 text-imc-gold">
+            <h3 className="font-bold text-xs tracking-widest uppercase mb-4 text-imc-gold mt-2 md:mt-0">
               {dict?.contact || "Contact Us"}
             </h3>
             <ul className="space-y-4">
