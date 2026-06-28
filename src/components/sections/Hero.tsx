@@ -66,10 +66,10 @@ export default function Hero({
           >
             {dict?.title_part1 || "Unearthing "}
             <span className="text-imc-gold drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)]">
-              {dict?.title_highlight1 || "Value"}
+              {dict?.title_highlight1 || "Value,"}
             </span>
             <br className="hidden md:block" />
-            {dict?.title_part2 || ", Sustaining "}
+            {dict?.title_part2 || "Sustaining "}
             <span className="text-white drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)]">
               {dict?.title_highlight2 || "Communities."}
             </span>
@@ -97,12 +97,6 @@ export default function Hero({
             >
               {dict?.cta_primary || "Discover IMC"}
               <ArrowRight className="ml-2 md:ml-3 h-4 w-4 md:h-5 md:w-5" />
-            </a>
-            <a
-              href={`/${lang}/contact`}
-              className="inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-4 text-xs md:text-sm font-bold tracking-widest uppercase text-white bg-transparent border-2 border-white hover:bg-white/10 rounded-full transition-all duration-300 shadow-md backdrop-blur-sm"
-            >
-              {dict?.cta_secondary || "Contact Us"}
             </a>
           </motion.div>
         </div>
