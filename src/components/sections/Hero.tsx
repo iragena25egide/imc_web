@@ -62,10 +62,10 @@ export default function Hero({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-2xl md:text-3xl lg:text-4xl mt-8 text-white max-w-2xl mb-10 font-sans drop-shadow-lg font-semibold leading-relaxed"
+            className="text-lg md:text-xl lg:text-2xl mt-8 text-white max-w-2xl mb-10 font-sans drop-shadow-lg font-semibold leading-relaxed"
           >
             {dict?.subtitle ||
-              "Interafrican Mining Corporation (IMC) - Premier mining operations in Muhanga District, Rwanda, committed to excellence and environmental stewardship."}
+              "Interafrican Mining Corporation (IMC) – We are committed to conducting modern mining operations in Rwanda, protecting the environment, and promoting community development."}
           </motion.p>
 
           <motion.div
