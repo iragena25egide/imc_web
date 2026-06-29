@@ -40,7 +40,7 @@ export default function Stats({ dict }: { dict?: any }) {
     { name: dict?.employees || "Employees", value: 500, suffix: "+", icon: Users },
     { name: dict?.sites || "Active Sites", value: 1, suffix: "", icon: Building2 },
     { name: dict?.tons || "Annual Extracted Tons", value: 90, suffix: "-95", icon: TrendingUp },
-    { name: dict?.years || "Years Excellence", value: 3, suffix: "+", icon: Trophy },
+    { name: dict?.years || "Years Excellence", value: 8, suffix: "+", icon: Trophy },
   ];
 
   return (
