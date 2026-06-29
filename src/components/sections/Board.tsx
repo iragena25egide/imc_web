@@ -48,9 +48,11 @@ export default function Board({ dict }: { dict?: any }) {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-sm text-imc-blue font-bold tracking-widest uppercase">{dict?.subtitle || "Leadership"}</h2>
+          {dict?.subtitle && dict.subtitle.trim() !== "" && (
+            <h2 className="text-sm text-imc-blue font-bold tracking-widest uppercase">{dict.subtitle}</h2>
+          )}
           <p className="mt-4 text-4xl leading-tight font-heading font-extrabold tracking-tight text-imc-blue-dark sm:text-5xl">
-            {dict?.title || "Board of Directors"}
+            {dict?.title || "Leadership"}
           </p>
           <div className="mt-6 w-20 h-1 bg-imc-gold rounded-full mx-auto" />
         </div>
