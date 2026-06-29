@@ -4,7 +4,6 @@ import PageHeader from "@/components/ui/PageHeader";
 import About from "@/components/sections/About";
 import CompanyBackground from "@/components/sections/CompanyBackground";
 import Stats from "@/components/sections/Stats";
-import Board from "@/components/sections/Board";
 import { getDictionary } from "@/dictionaries";
 import type { Locale } from "@/dictionaries";
 
@@ -32,7 +31,6 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
       />
       <CompanyBackground dict={dict.companyBackground} />
       <Stats dict={dict.stats} />
-      <Board dict={dict.board} />
       <Footer dict={dict.footer} navDict={dict.navigation} lang={resolvedParams.lang} />
     </main>
   );
