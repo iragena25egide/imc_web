@@ -56,7 +56,7 @@ export default function Navbar({
                 alt="IMC Logo"
                 width={180}
                 height={50}
-                className="object-contain"
+                className="object-contain w-[140px] md:w-[180px] h-auto mt-1 md:mt-2"
                 priority
               />
             </Link>
