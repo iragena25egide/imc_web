@@ -38,8 +38,8 @@ const Counter = ({ end, suffix = "", duration = 2000 }: CounterProps) => {
 export default function Stats({ dict }: { dict?: any }) {
   const stats = [
     { name: dict?.employees || "Employees", value: 500, suffix: "+", icon: Users },
-    { name: dict?.sites || "Active Sites", value: 3, suffix: "", icon: Building2 },
-    { name: dict?.tons || "Tons Extracted", value: 890, suffix: "k+", icon: TrendingUp },
+    { name: dict?.sites || "Active Sites", value: 1, suffix: "", icon: Building2 },
+    { name: dict?.tons || "Tons Extracted", value: 0, suffix: "", icon: TrendingUp },
     { name: dict?.years || "Years Excellence", value: 3, suffix: "+", icon: Trophy },
   ];
 
