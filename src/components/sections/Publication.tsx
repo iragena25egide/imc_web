@@ -68,7 +68,6 @@ export default function Publication({ limit, dict }: { limit?: number, dict?: an
               </div>
               <a
                 href={pub.fileUrl}
-                download
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-4 text-slate-400 hover:text-white hover:bg-imc-blue rounded-full transition-all duration-300 shadow-sm hover:shadow-md border border-slate-100 block"

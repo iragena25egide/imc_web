@@ -157,13 +157,6 @@
         "content": "IMC Ltd, a Rwandan mining company headquartered in Gatenga, Kigali, has announced the discovery of lithium-bearing pegmatite in Kabacuzi Sector, Muhanga District.\n\nThis breakthrough adds to the company’s established production of tin (cassiterite) and tantalum (coltan), strengthening its position in Rwanda’s mining industry.\n\nLithium is a critical mineral used in rechargeable batteries, electric vehicles, and renewable energy storage systems. With global demand rising, the identification of lithium deposits significantly enhances the strategic importance of IMC Ltd’s concession. The discovery is expected to increase the value of the concession, making it more attractive for investment and future development.\n\nOperating under a 10-year mining license (2023–2033), IMC Ltd remains committed to sustainable mining practices. By integrating lithium into its long-term strategy, the company aims to diversify Rwanda’s mineral portfolio and establish itself as a leading producer of tin, tantalum, and lithium for global technological industries."
       },
       {
-        "slug": "community-education-scholarships",
-        "title": "IMC Awards 50 Engineering Scholarships",
-        "date": "January 22, 2025",
-        "excerpt": "Demonstrating our commitment to the Muhanga community, we have awarded full university scholarships to 50 local engineering students.",
-        "content": "Education is the foundation of sustainable development. In line with our mission to empower local communities, IMC has launched a comprehensive education sponsorship program, granting full scholarships to 50 talented students from the Muhanga District to study mining and civil engineering at top Rwandan universities.\n\nThe scholarship covers full tuition, accommodation, and provides a monthly stipend. Furthermore, students will have the opportunity to participate in paid internships at IMC during their summer breaks, gaining invaluable hands-on experience."
-      },
-      {
         "slug": "zero-incident-safety-milestone",
         "title": "One Year of Zero-Incident Operations",
         "date": "December 05, 2025",
@@ -178,28 +171,22 @@
     "viewAll": "View All",
     "items": [
       {
-        "title": "2025 Annual Sustainability Report",
-        "category": "Sustainability",
-        "size": "2.4 MB PDF",
-        "fileUrl": "/docs/sustainability-report-2025.pdf"
+        "title": "Law Governing Forests in Rwanda",
+        "category": "Forestry Law",
+        "size": "296 KB PDF",
+        "fileUrl": "/file/ITEGEKO RIGENGA AMASHYAMBA MU RWANDA.pdf"
       },
       {
-        "title": "Geological Survey: Muhanga District Minerals",
-        "category": "Research",
-        "size": "4.1 MB PDF",
-        "fileUrl": "/docs/geological-survey-muhanga.pdf"
+        "title": "Law on Mining and Quarry Operations",
+        "category": "Mining Law",
+        "size": "2.0 MB PDF",
+        "fileUrl": "/file/ITEGEKO RIGENGA UBUCUKUZI BW'AMABUYE Y'AGACIRO NA KARIYERI.pdf"
       },
       {
-        "title": "Community Development Framework 2026-2030",
-        "category": "Policy",
-        "size": "1.8 MB PDF",
-        "fileUrl": "/docs/community-development-framework.pdf"
-      },
-      {
-        "title": "Occupational Health & Safety Guidelines",
-        "category": "Safety",
-        "size": "1.2 MB PDF",
-        "fileUrl": "/docs/health-safety-guidelines.pdf"
+        "title": "Penal Code - Crimes and Penalties",
+        "category": "General Law",
+        "size": "2.0 MB PDF",
+        "fileUrl": "/file/ITEGEKO RItegeka  IBYAHA N'IBIHANO MURI RUSANGE.pdf"
       }
     ]
   }
