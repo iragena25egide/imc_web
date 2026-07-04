@@ -54,9 +54,9 @@ export default function Navbar({
               <Image
                 src="/logo.png"
                 alt="IMC Logo"
-                width={220}
-                height={80}
-                className="object-contain w-[160px] md:w-[220px] h-auto"
+                width={160}
+                height={60}
+                className="object-contain w-[120px] md:w-[160px] h-auto"
                 priority
               />
             </Link>
