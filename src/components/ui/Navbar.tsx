@@ -48,15 +48,15 @@ export default function Navbar({
       className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? "bg-white/80 backdrop-blur-md shadow-md border-b border-white/20" : "bg-white shadow-sm border-b border-slate-100"}`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 lg:h-20">
+        <div className="flex justify-between items-center h-20 lg:h-28">
           <div className="flex items-center">
             <Link href={`/${lang}`} className="flex items-center gap-2">
               <Image
                 src="/logo.png"
                 alt="IMC Logo"
-                width={180}
-                height={50}
-                className="object-contain w-[140px] md:w-[180px] h-auto mt-1 md:mt-2"
+                width={220}
+                height={80}
+                className="object-contain w-[160px] md:w-[220px] h-auto"
                 priority
               />
             </Link>
