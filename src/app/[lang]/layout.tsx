@@ -50,7 +50,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.imcrwanda.com/${resolvedParams.lang}`,
       languages: {
         'en': 'https://www.imcrwanda.com/en',
-        'fr': 'https://www.imcrwanda.com/fr',
+        'rw': 'https://www.imcrwanda.com/rw',
       },
     },
   };

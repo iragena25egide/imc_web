@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   
   const sitemapEntries: MetadataRoute.Sitemap = [];
   
-  const locales = ['en', 'fr'];
+  const locales = ['en', 'rw'];
   
   routes.forEach((route) => {
     locales.forEach((locale) => {
