@@ -14,9 +14,45 @@ const libreFranklin = Libre_Franklin({
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
   const dict = await getDictionary(resolvedParams.lang as Locale);
+  const title = dict.meta?.title || "Interafrican Mining Corporation";
+  const description = dict.meta?.description || "Leading sustainable mining operations in Rwanda, specializing in cassiterite and coltan.";
+
   return {
-    title: dict.meta?.title || "Interafrican Mining Corporation",
-    description: dict.meta?.description || "Leading sustainable mining operations in Rwanda.",
+    metadataBase: new URL('https://www.imcrwanda.com'),
+    title: {
+      default: title,
+      template: `%s | IMC Rwanda`,
+    },
+    description: description,
+    keywords: ["Mining", "Rwanda", "Coltan", "Cassiterite", "Sustainable Mining", "IMC", "Interafrican Mining Corporation", "Minerals"],
+    openGraph: {
+      title: title,
+      description: description,
+      url: 'https://www.imcrwanda.com',
+      siteName: 'IMC Rwanda',
+      images: [
+        {
+          url: '/logo.png',
+          width: 800,
+          height: 600,
+        },
+      ],
+      locale: resolvedParams.lang,
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: title,
+      description: description,
+      images: ['/logo.png'],
+    },
+    alternates: {
+      canonical: `https://www.imcrwanda.com/${resolvedParams.lang}`,
+      languages: {
+        'en': 'https://www.imcrwanda.com/en',
+        'fr': 'https://www.imcrwanda.com/fr',
+      },
+    },
   };
 }
 
