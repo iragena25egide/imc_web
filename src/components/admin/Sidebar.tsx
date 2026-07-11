@@ -18,6 +18,7 @@ export default function Sidebar() {
   const router = useRouter();
 
   const handleLogout = () => {
+    document.cookie = "admin_access=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     toast.success("Logged out successfully");
     router.push("/"); // Redirect to home page
   };
