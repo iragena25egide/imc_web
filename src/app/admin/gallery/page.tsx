@@ -52,7 +52,7 @@ export default function AdminGalleryPage() {
   };
   
   useEffect(() => {
-    fetch("http://localhost:3005/gallery")
+    fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3005'}/gallery`)
       .then(res => res.json())
       .then(data => {
         setItems(data);
@@ -75,7 +75,7 @@ export default function AdminGalleryPage() {
   const openEditModal = (item: any) => {
     setTitle(item.title || "");
     setFile(null);
-    setPreview(item.url.startsWith('http') ? item.url : `http://localhost:3005${item.url}`);
+    setPreview(item.url.startsWith('http') ? item.url : `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:3005"}${item.url}`);
     setEditingId(item.id);
     setIsAdding(true);
   };
@@ -93,7 +93,7 @@ export default function AdminGalleryPage() {
     try {
       if (isEditing && !file) {
         // Just update title
-        const res = await fetch(`http://localhost:3005/gallery/${editingId}`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:3005"}/gallery/${editingId}`, {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ title }),
@@ -122,7 +122,7 @@ export default function AdminGalleryPage() {
       // Wait, let's keep it simple: if editing with file, it's not supported easily without backend changes.
       // We will just do creation for now.
       if (!isEditing) {
-        const res = await fetch("http://localhost:3005/gallery/upload", {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3005'}/gallery/upload`, {
           method: "POST",
           body: formData,
         });
@@ -149,7 +149,7 @@ export default function AdminGalleryPage() {
     setDeleteId(null);
     const toastId = toast.loading("Deleting...");
     try {
-      const res = await fetch(`http://localhost:3005/gallery/${id}`, { method: "DELETE" });
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:3005"}/gallery/${id}`, { method: "DELETE" });
       if (res.ok) {
         setItems(items.filter((n: any) => n.id !== id));
         toast.success("Media deleted", { id: toastId });
@@ -302,7 +302,7 @@ export default function AdminGalleryPage() {
                               <Video size={24} />
                             </div>
                           ) : (
-                            <img src={item.url.startsWith('http') ? item.url : `http://localhost:3005${item.url}`} alt={item.title || "Gallery image"} className="w-full h-full object-cover" />
+                            <img src={item.url.startsWith('http') ? item.url : `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:3005"}${item.url}`} alt={item.title || "Gallery image"} className="w-full h-full object-cover" />
                           )}
                         </div>
                         <span className="text-slate-800 font-medium">

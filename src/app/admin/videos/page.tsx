@@ -61,7 +61,7 @@ export default function VideosPage() {
   };
   const fetchVideos = async () => {
     try {
-      const res = await fetch("http://localhost:3005/video");
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3005'}/video`);
       if (res.ok) {
         const data = await res.json();
         setVideos(data);
@@ -88,7 +88,7 @@ export default function VideosPage() {
     const toastId = toast.loading(isEditing ? "Updating video..." : "Adding video...");
 
     try {
-      const res = await fetch(isEditing ? `http://localhost:3005/video/${editingId}` : "http://localhost:3005/video", {
+      const res = await fetch(isEditing ? `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:3005"}/video/${editingId}` : `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3005'}/video`, {
         method: isEditing ? "PATCH" : "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ title, youtubeLink }),
@@ -113,7 +113,7 @@ export default function VideosPage() {
     const id = deleteId;
     setDeleteId(null);
     try {
-      const res = await fetch(`http://localhost:3005/video/${id}`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:3005"}/video/${id}`, {
         method: "DELETE",
       });
       if (res.ok) {

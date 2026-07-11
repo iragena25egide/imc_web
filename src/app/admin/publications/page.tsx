@@ -54,7 +54,7 @@ export default function AdminPublicationsPage() {
   };
   
   useEffect(() => {
-    fetch("http://localhost:3005/publication")
+    fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3005'}/publication`)
       .then(res => res.json())
       .then(data => {
         setItems(data);
@@ -80,7 +80,7 @@ export default function AdminPublicationsPage() {
     try {
       if (isEditing && !file) {
         // Just update title
-        const res = await fetch(`http://localhost:3005/publication/${editingId}`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:3005"}/publication/${editingId}`, {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ title }),
@@ -102,7 +102,7 @@ export default function AdminPublicationsPage() {
       formData.append("title", title);
 
       if (!isEditing) {
-        const res = await fetch("http://localhost:3005/publication/upload", {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3005'}/publication/upload`, {
           method: "POST",
           body: formData,
         });
@@ -128,7 +128,7 @@ export default function AdminPublicationsPage() {
     setDeleteId(null);
     const toastId = toast.loading("Deleting...");
     try {
-      const res = await fetch(`http://localhost:3005/publication/${id}`, { method: "DELETE" });
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:3005"}/publication/${id}`, { method: "DELETE" });
       if (res.ok) {
         setItems(items.filter((n: any) => n.id !== id));
         toast.success("Document deleted", { id: toastId });
@@ -286,7 +286,7 @@ export default function AdminPublicationsPage() {
                     <td className="px-6 py-4 text-slate-500">{new Date(item.createdAt).toLocaleDateString()}</td>
                     <td className="px-6 py-4 flex justify-end gap-3">
                       <a 
-                        href={item.fileUrl.startsWith('http') ? item.fileUrl : `http://localhost:3005${item.fileUrl}`} 
+                        href={item.fileUrl.startsWith('http') ? item.fileUrl : `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:3005"}${item.fileUrl}`} 
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-imc-blue hover:text-imc-blue-dark p-2 rounded-lg hover:bg-blue-50 transition-colors"

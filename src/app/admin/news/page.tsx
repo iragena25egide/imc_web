@@ -55,7 +55,7 @@ export default function AdminNewsPage() {
   };
   
   useEffect(() => {
-    fetch("http://localhost:3005/news")
+    fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3005'}/news`)
       .then(res => res.json())
       .then(data => {
         setNews(data);
@@ -81,7 +81,7 @@ export default function AdminNewsPage() {
     const isEditing = editingId !== null;
     const toastId = toast.loading(isEditing ? "Updating article..." : "Publishing article...");
     try {
-      const res = await fetch(isEditing ? `http://localhost:3005/news/${editingId}` : "http://localhost:3005/news", {
+      const res = await fetch(isEditing ? `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:3005"}/news/${editingId}` : `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3005'}/news`, {
         method: isEditing ? "PATCH" : "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ title, content, imageUrl: "" })
@@ -111,7 +111,7 @@ export default function AdminNewsPage() {
     setDeleteId(null);
     const toastId = toast.loading("Deleting...");
     try {
-      const res = await fetch(`http://localhost:3005/news/${id}`, { method: "DELETE" });
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:3005"}/news/${id}`, { method: "DELETE" });
       if (res.ok) {
         setNews(news.filter((n: any) => n.id !== id));
         toast.success("Article deleted", { id: toastId });

@@ -69,7 +69,7 @@ export default function Publication({ limit, dict, dbPublications }: { limit?: n
                 </div>
               </div>
               <a
-                href={pub.fileUrl?.startsWith('http') || pub.fileUrl?.startsWith('/') ? pub.fileUrl : `http://localhost:3005${pub.fileUrl}`}
+                href={pub.fileUrl?.startsWith('http') || pub.fileUrl?.startsWith('/') ? pub.fileUrl : `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:3005"}${pub.fileUrl}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-4 text-slate-400 hover:text-white hover:bg-imc-blue rounded-full transition-all duration-300 shadow-sm hover:shadow-md border border-slate-100 block"

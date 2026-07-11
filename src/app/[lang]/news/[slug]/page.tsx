@@ -19,7 +19,7 @@ export async function generateMetadata({
   const identifier = resolvedParams.slug;
   
   try {
-    const res = await fetch(`http://localhost:3005/news`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:3005"}/news`);
     if (res.ok) {
       const data = await res.json();
       article = data.find((a: any) => {
@@ -53,7 +53,7 @@ export default async function NewsArticlePage({
   
   // Try fetching from backend first
   try {
-    const res = await fetch(`http://localhost:3005/news`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:3005"}/news`);
     if (res.ok) {
       const data = await res.json();
       // Assume the backend returns an array of news articles

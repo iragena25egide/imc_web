@@ -21,7 +21,7 @@ export default async function PublicationPage({ params }: { params: Promise<{ la
 
   let dbPublications = [];
   try {
-    const res = await fetch('http://localhost:3005/publication', { cache: 'no-store' });
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3005'}/publication`, { cache: 'no-store' });
     if (res.ok) {
       dbPublications = await res.json();
     }

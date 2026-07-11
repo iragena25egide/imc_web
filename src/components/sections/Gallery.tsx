@@ -45,8 +45,8 @@ export default function Gallery({
 
       try {
         const [galleryRes, videoRes] = await Promise.all([
-          fetch('http://localhost:3005/gallery').catch(() => null),
-          fetch('http://localhost:3005/video').catch(() => null)
+          fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3005'}/gallery`).catch(() => null),
+          fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3005'}/video`).catch(() => null)
         ]);
         
         let loadedGallery = fallbackGallery;
@@ -55,7 +55,7 @@ export default function Gallery({
           if (galleryData && galleryData.length > 0) {
             const sortedGalleryData = [...galleryData].sort((a: any, b: any) => new Date(b.createdAt || 0).getTime() - new Date(a.createdAt || 0).getTime());
             loadedGallery = sortedGalleryData.map((item: any) => ({
-              src: item.url?.startsWith('http') || item.url?.startsWith('/') ? item.url : `http://localhost:3005${item.url}`,
+              src: item.url?.startsWith('http') || item.url?.startsWith('/') ? item.url : `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:3005"}${item.url}`,
               title: item.title,
               subtitle: "Media"
             }));

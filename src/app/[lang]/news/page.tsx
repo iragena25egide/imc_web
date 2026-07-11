@@ -21,7 +21,7 @@ export default async function NewsPage({ params }: { params: Promise<{ lang: str
 
   let newsArticles = [];
   try {
-    const res = await fetch('http://localhost:3005/news', { cache: 'no-store' });
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3005'}/news`, { cache: 'no-store' });
     if (res.ok) {
       newsArticles = await res.json();
     }

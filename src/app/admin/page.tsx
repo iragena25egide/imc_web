@@ -17,10 +17,10 @@ export default function AdminDashboard() {
     const fetchCounts = async () => {
       try {
         const [galleryRes, newsRes, publicationsRes, videosRes] = await Promise.all([
-          fetch("http://localhost:3005/gallery"),
-          fetch("http://localhost:3005/news"),
-          fetch("http://localhost:3005/publication"),
-          fetch("http://localhost:3005/video"),
+          fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3005'}/gallery`),
+          fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3005'}/news`),
+          fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3005'}/publication`),
+          fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3005'}/video`),
         ]);
 
         const [galleryData, newsData, publicationsData, videosData] = await Promise.all([
