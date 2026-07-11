@@ -18,81 +18,82 @@ export default function Gallery({
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  const galleryItems = [
-    {
-      src: "/images/gallery/casetelite.jpg",
-      title: dict?.items?.casetelite?.title || "Cassiterite Production",
-      subtitle: dict?.items?.casetelite?.subtitle || "Minerals",
-    },
-    {
-      src: "/images/gallery/tunnel.jpg",
-      title: dict?.items?.tunnel?.title || "Underground Tunnel",
-      subtitle: dict?.items?.tunnel?.subtitle || "Extraction",
-    },
-    {
-      src: "/images/gallery/workers.jpg",
-      title: dict?.items?.workers?.title || "Our Mining Team",
-      subtitle: dict?.items?.workers?.subtitle || "Workforce",
-    },
-    {
-      src: "/images/gallery/igisubizo tunnel.jpg",
-      title: dict?.items?.igisubizo?.title || "Igisubizo Tunnel",
-      subtitle: dict?.items?.igisubizo?.subtitle || "Operations",
-    },
-    {
-      src: "/images/gallery/work imc.jpg",
-      title: dict?.items?.workImc?.title || "Active Operations",
-      subtitle: dict?.items?.workImc?.subtitle || "Site Work",
-    },
-    {
-      src: "/images/gallery/tools.jpg",
-      title: dict?.items?.tools?.title || "Mining Equipment",
-      subtitle: dict?.items?.tools?.subtitle || "Tools",
-    },
-    {
-      src: "/images/gallery/market.jpg",
-      title: dict?.items?.market?.title || "Mineral Market",
-      subtitle: dict?.items?.market?.subtitle || "Commercialization",
-    },
-    {
-      src: "/images/gallery/tool.jpg",
-      title: dict?.items?.tool?.title || "Precision Tools",
-      subtitle: dict?.items?.tool?.subtitle || "Equipment",
-    },
-    {
-      src: "/images/gallery/umubatizo_2.JPG.jpeg",
-      title: dict?.items?.events?.title || "Company Events",
-      subtitle: dict?.items?.events?.subtitle || "Community",
-    },
-    {
-      src: "/certificate.jpeg",
-      title: dict?.items?.certificate?.title || "Company Certificate",
-      subtitle: dict?.items?.certificate?.subtitle || "Certification",
-    },
-  ];
+  const [galleryItems, setGalleryItems] = useState<any[]>([]);
+  const [videoItems, setVideoItems] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // For demonstration, using same images as placeholders but flag them as video format in actual use
-  // We'll use the .mp4 format. Since we don't have actual videos, this is structural
-  const videoItems = [
-    {
-      id: "5otZfK3zv54",
-      src: "https://img.youtube.com/vi/5otZfK3zv54/hqdefault.jpg",
-      title: dict?.videos?.v1?.title || "Mining Process Overview",
-      subtitle: dict?.videos?.v1?.subtitle || "Documentary",
-    },
-    {
-      id: "_UKMhL8eBXM",
-      src: "https://img.youtube.com/vi/_UKMhL8eBXM/hqdefault.jpg",
-      title: dict?.videos?.v2?.title || "Community Impact",
-      subtitle: dict?.videos?.v2?.subtitle || "Initiatives",
-    },
-    {
-      id: "syCiyBPRS0Y",
-      src: "https://img.youtube.com/vi/syCiyBPRS0Y/hqdefault.jpg",
-      title: dict?.videos?.v3?.title || "Safety First",
-      subtitle: dict?.videos?.v3?.subtitle || "Training",
+  useEffect(() => {
+    async function fetchData() {
+      const fallbackGallery = dict ? [
+        { src: "/images/gallery/casetelite.jpg", title: dict.items?.casetelite?.title || "Cassiterite Production", subtitle: dict.items?.casetelite?.subtitle || "Minerals" },
+        { src: "/images/gallery/tunnel.jpg", title: dict.items?.tunnel?.title || "Underground Tunnel", subtitle: dict.items?.tunnel?.subtitle || "Extraction" },
+        { src: "/images/gallery/workers.jpg", title: dict.items?.workers?.title || "Our Mining Team", subtitle: dict.items?.workers?.subtitle || "Workforce" },
+        { src: "/images/gallery/igisubizo tunnel.jpg", title: dict.items?.igisubizo?.title || "Igisubizo Tunnel", subtitle: dict.items?.igisubizo?.subtitle || "Operations" },
+        { src: "/images/gallery/work imc.jpg", title: dict.items?.workImc?.title || "Active Operations", subtitle: dict.items?.workImc?.subtitle || "Site Work" },
+        { src: "/images/gallery/tools.jpg", title: dict.items?.tools?.title || "Mining Equipment", subtitle: dict.items?.tools?.subtitle || "Tools" },
+        { src: "/images/gallery/market.jpg", title: dict.items?.market?.title || "Mineral Market", subtitle: dict.items?.market?.subtitle || "Commercialization" },
+        { src: "/images/gallery/tool.jpg", title: dict.items?.tool?.title || "Precision Tools", subtitle: dict.items?.tool?.subtitle || "Equipment" },
+        { src: "/images/gallery/umubatizo_2.JPG.jpeg", title: dict.items?.events?.title || "Company Events", subtitle: dict.items?.events?.subtitle || "Community" },
+        { src: "/certificate.jpeg", title: dict.items?.certificate?.title || "Company Certificate", subtitle: dict.items?.certificate?.subtitle || "Certification" },
+      ] : [];
+      
+      const fallbackVideos = dict ? [
+        { id: "5otZfK3zv54", src: "https://img.youtube.com/vi/5otZfK3zv54/hqdefault.jpg", title: dict.videos?.v1?.title || "Mining Process Overview", subtitle: dict.videos?.v1?.subtitle || "Documentary" },
+        { id: "_UKMhL8eBXM", src: "https://img.youtube.com/vi/_UKMhL8eBXM/hqdefault.jpg", title: dict.videos?.v2?.title || "Community Impact", subtitle: dict.videos?.v2?.subtitle || "Initiatives" },
+        { id: "syCiyBPRS0Y", src: "https://img.youtube.com/vi/syCiyBPRS0Y/hqdefault.jpg", title: dict.videos?.v3?.title || "Safety First", subtitle: dict.videos?.v3?.subtitle || "Training" }
+      ] : [];
+
+      try {
+        const [galleryRes, videoRes] = await Promise.all([
+          fetch('http://localhost:3005/gallery').catch(() => null),
+          fetch('http://localhost:3005/video').catch(() => null)
+        ]);
+        
+        let loadedGallery = fallbackGallery;
+        if (galleryRes && galleryRes.ok) {
+          const galleryData = await galleryRes.json();
+          if (galleryData && galleryData.length > 0) {
+            const sortedGalleryData = [...galleryData].sort((a: any, b: any) => new Date(b.createdAt || 0).getTime() - new Date(a.createdAt || 0).getTime());
+            loadedGallery = sortedGalleryData.map((item: any) => ({
+              src: item.url?.startsWith('http') || item.url?.startsWith('/') ? item.url : `http://localhost:3005${item.url}`,
+              title: item.title,
+              subtitle: "Media"
+            }));
+          }
+        }
+        setGalleryItems(loadedGallery);
+        
+        let loadedVideos = fallbackVideos;
+        if (videoRes && videoRes.ok) {
+          const videoData = await videoRes.json();
+          if (videoData && videoData.length > 0) {
+            const sortedVideoData = [...videoData].sort((a: any, b: any) => new Date(b.createdAt || 0).getTime() - new Date(a.createdAt || 0).getTime());
+            loadedVideos = sortedVideoData.map((item: any) => {
+              let id = "default";
+              try {
+                const url = new URL(item.youtubeLink);
+                id = url.searchParams.get("v") || url.pathname.split('/').pop() || "default";
+              } catch (e) {}
+              return {
+                id: id,
+                src: `https://img.youtube.com/vi/${id}/hqdefault.jpg`,
+                title: item.title,
+                subtitle: "Video"
+              };
+            });
+          }
+        }
+        setVideoItems(loadedVideos);
+      } catch (err) {
+        console.error("Failed to fetch gallery items", err);
+        setGalleryItems(fallbackGallery);
+        setVideoItems(fallbackVideos);
+      } finally {
+        setIsLoading(false);
+      }
     }
-  ];
+    fetchData();
+  }, []);
 
   const [activeTab, setActiveTab] = useState<"images" | "videos">("images");
 
