@@ -30,14 +30,20 @@ export default function Navbar({
   const navLinks = [
     { name: dict?.home || "Home", href: `/${lang}` },
     { name: dict?.about || "About Us", href: `/${lang}/about` },
-    { 
-      name: dict?.gallery || "Gallery", 
+    {
+      name: dict?.gallery || "Gallery",
       href: `/${lang}/gallery`,
       hasDropdown: true,
       dropdownItems: [
-        { name: dict?.galleryImages || "Images", href: `/${lang}/gallery?tab=images` },
-        { name: dict?.galleryVideos || "Videos", href: `/${lang}/gallery?tab=videos` }
-      ]
+        {
+          name: dict?.galleryImages || "Images",
+          href: `/${lang}/gallery?tab=images`,
+        },
+        {
+          name: dict?.galleryVideos || "Videos",
+          href: `/${lang}/gallery?tab=videos`,
+        },
+      ],
     },
     { name: dict?.news || "News", href: `/${lang}/news` },
     { name: dict?.publication || "Publication", href: `/${lang}/publication` },
@@ -50,33 +56,48 @@ export default function Navbar({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20 lg:h-28">
           <div className="flex items-center">
-            <Link href={`/${lang}`} className="flex items-center gap-2">
+            <Link
+              href={`/${lang}`}
+              className="flex flex-col items-center justify-center pt-1"
+            >
               <Image
-                src="/logo.png"
+                src="/logo-icon.png"
                 alt="IMC Logo"
-                width={160}
-                height={60}
-                className="object-contain w-[120px] md:w-[160px] h-auto"
+                width={110}
+                height={48}
+                className="object-contain w-[80px] md:w-[100px] lg:w-[110px] h-auto shrink-0 mb-1"
                 priority
               />
+              <span className="font-heading text-[8px] sm:text-[9px] md:text-[9px] lg:text-9px] tracking-widest text-imc-blue-dark text-center leading-none uppercase">
+                Interafrican Mining Corporation
+              </span>
             </Link>
           </div>
 
           <div className="hidden lg:flex items-center space-x-8">
             <div className="flex space-x-8 items-center">
               {navLinks.map((link) => (
-                <div 
-                  key={link.name} 
+                <div
+                  key={link.name}
                   className="relative group"
-                  onMouseEnter={() => link.hasDropdown && setIsGalleryDropdownOpen(true)}
-                  onMouseLeave={() => link.hasDropdown && setIsGalleryDropdownOpen(false)}
+                  onMouseEnter={() =>
+                    link.hasDropdown && setIsGalleryDropdownOpen(true)
+                  }
+                  onMouseLeave={() =>
+                    link.hasDropdown && setIsGalleryDropdownOpen(false)
+                  }
                 >
                   <Link
                     href={link.href}
                     className="font-medium text-xs tracking-widest uppercase text-imc-blue-dark transition-colors hover:text-imc-blue-light flex items-center gap-1"
                   >
                     {link.name}
-                    {link.hasDropdown && <ChevronDown size={14} className={`transition-transform duration-200 ${isGalleryDropdownOpen ? 'rotate-180' : ''}`} />}
+                    {link.hasDropdown && (
+                      <ChevronDown
+                        size={14}
+                        className={`transition-transform duration-200 ${isGalleryDropdownOpen ? "rotate-180" : ""}`}
+                      />
+                    )}
                   </Link>
 
                   {link.hasDropdown && (
