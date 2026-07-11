@@ -5,14 +5,19 @@ import { Download, FileText, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 
-export default function Publication({ limit, dict }: { limit?: number, dict?: any }) {
+export default function Publication({ limit, dict, dbPublications }: { limit?: number, dict?: any, dbPublications?: any[] }) {
   const params = useParams();
   const lang = params?.lang || "en";
 
-  const items = dict?.items || [];
+  const items = dbPublications && dbPublications.length > 0 ? dbPublications : (dict?.items || []);
+  const sortedItems = [...items].sort((a: any, b: any) => {
+    const dateA = new Date(a.createdAt || a.date || 0).getTime();
+    const dateB = new Date(b.createdAt || b.date || 0).getTime();
+    return dateB - dateA; // Newest first
+  });
   const displayedPublications = limit
-    ? items.slice(0, limit)
-    : items;
+    ? sortedItems.slice(0, limit)
+    : sortedItems;
 
   return (
     <section
@@ -56,18 +61,15 @@ export default function Publication({ limit, dict }: { limit?: number, dict?: an
                 </div>
                 <div>
                   <div className="text-xs font-bold text-imc-gold uppercase tracking-widest mb-2">
-                    {pub.category}
+                    {pub.category || "Document"}
                   </div>
                   <h3 className="text-xl font-bold font-heading text-imc-blue-dark group-hover:text-imc-blue transition-colors">
                     {pub.title}
                   </h3>
-                  <p className="text-sm font-medium tracking-wide text-slate-600 mt-2">
-                    {pub.size}
-                  </p>
                 </div>
               </div>
               <a
-                href={pub.fileUrl}
+                href={pub.fileUrl?.startsWith('http') || pub.fileUrl?.startsWith('/') ? pub.fileUrl : `http://localhost:3005${pub.fileUrl}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-4 text-slate-400 hover:text-white hover:bg-imc-blue rounded-full transition-all duration-300 shadow-sm hover:shadow-md border border-slate-100 block"
