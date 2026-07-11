@@ -19,6 +19,16 @@ export default async function NewsPage({ params }: { params: Promise<{ lang: str
   const resolvedParams = await params;
   const dict = await getDictionary(resolvedParams.lang as Locale);
 
+  let newsArticles = [];
+  try {
+    const res = await fetch('http://localhost:3005/news', { cache: 'no-store' });
+    if (res.ok) {
+      newsArticles = await res.json();
+    }
+  } catch (err) {
+    console.error("Failed to fetch news", err);
+  }
+
   return (
     <main className="flex-1 flex flex-col w-full min-h-screen">
       <Navbar dict={dict.navigation} lang={resolvedParams.lang} />
@@ -27,7 +37,7 @@ export default async function NewsPage({ params }: { params: Promise<{ lang: str
         description={dict.headers?.news?.desc} 
       />
       <div className="flex-1">
-        <News dict={dict.newsData} />
+        <News dict={dict.newsData} dbArticles={newsArticles} />
       </div>
       <Footer dict={dict.footer} navDict={dict.navigation} lang={resolvedParams.lang} />
     </main>

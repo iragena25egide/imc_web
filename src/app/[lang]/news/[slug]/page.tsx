@@ -15,8 +15,24 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const resolvedParams = await params;
   const dict = await getDictionary(resolvedParams.lang as Locale);
-  const articles = dict.newsData?.articles || [];
-  const article = articles.find((a: any) => a.slug === resolvedParams.slug);
+  let article = null;
+  const identifier = resolvedParams.slug;
+  
+  try {
+    const res = await fetch(`http://localhost:3005/news`);
+    if (res.ok) {
+      const data = await res.json();
+      article = data.find((a: any) => {
+        const generatedSlug = a.title ? a.title.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '') : '';
+        return generatedSlug === identifier || a.id.toString() === identifier;
+      });
+    }
+  } catch (e) {}
+
+  if (!article) {
+    const articles = dict.newsData?.articles || [];
+    article = articles.find((a: any) => a.slug === identifier || a.id?.toString() === identifier);
+  }
 
   return {
     title: article ? `${article.title} | Interafrican Mining Corp` : "Article Not Found | Interafrican Mining Corp",
@@ -32,8 +48,30 @@ export default async function NewsArticlePage({
   const resolvedParams = await params;
   const dict = await getDictionary(resolvedParams.lang as Locale);
   
-  const articles = dict.newsData?.articles || [];
-  const article = articles.find((a: any) => a.slug === resolvedParams.slug);
+  let article = null;
+  const identifier = resolvedParams.slug; // Could be an id or a slug
+  
+  // Try fetching from backend first
+  try {
+    const res = await fetch(`http://localhost:3005/news`);
+    if (res.ok) {
+      const data = await res.json();
+      // Assume the backend returns an array of news articles
+      // Try to match by ID if it's a number, or generated slug
+      article = data.find((a: any) => {
+        const generatedSlug = a.title ? a.title.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '') : '';
+        return generatedSlug === identifier || a.id.toString() === identifier;
+      });
+    }
+  } catch (error) {
+    console.error("Failed to fetch article from backend", error);
+  }
+
+  // Fallback to local dictionary data
+  if (!article) {
+    const articles = dict.newsData?.articles || [];
+    article = articles.find((a: any) => a.slug === identifier || a.id?.toString() === identifier);
+  }
 
   if (!article) {
     notFound();
@@ -53,7 +91,7 @@ export default async function NewsArticlePage({
         
         <header className="mb-12">
           <div className="text-sm font-bold tracking-widest uppercase text-imc-gold mb-4">
-            {article.date}
+            {article.createdAt ? new Date(article.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : article.date}
           </div>
           <h1 className="text-4xl md:text-5xl font-extrabold font-heading text-imc-blue-dark leading-tight">
             {article.title}
