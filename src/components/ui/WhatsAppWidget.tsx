@@ -1,13 +1,18 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageCircle, X, Send } from "lucide-react";
+import { MessageCircle, X, Send, Lock, Eye, EyeOff } from "lucide-react";
 import Image from "next/image";
 
 export default function WhatsAppWidget({ dict }: { dict?: any }) {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState("");
+  const [showAdminModal, setShowAdminModal] = useState(false);
+  const [adminCode, setAdminCode] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const router = useRouter();
 
   const phoneNumber = "250781579376"; // Updated actual number
 
@@ -25,6 +30,17 @@ export default function WhatsAppWidget({ dict }: { dict?: any }) {
     setIsOpen(false);
   };
 
+  const handleAdminSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (adminCode === 'imc@admin2026!') {
+      document.cookie = "admin_access=true; path=/";
+      router.push('/admin');
+    } else {
+      alert("Invalid code");
+      setAdminCode("");
+    }
+  };
+
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
       <AnimatePresence>
@@ -38,7 +54,10 @@ export default function WhatsAppWidget({ dict }: { dict?: any }) {
           >
             {/* Header */}
             <div className="bg-[#075e54] p-4 flex items-center justify-between">
-              <div className="flex items-center gap-3">
+              <div 
+                className="flex items-center gap-3 cursor-pointer"
+                onClick={() => setShowAdminModal(true)}
+              >
                 <div className="relative w-10 h-10 bg-white rounded-full overflow-hidden border-2 border-white/20 shadow-sm flex-shrink-0">
                   <Image 
                     src="/logo.png" 
@@ -99,6 +118,58 @@ export default function WhatsAppWidget({ dict }: { dict?: any }) {
               </form>
             </div>
           </motion.div>
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {showAdminModal && (
+          <div className="fixed inset-0 bg-black/60 z-[100] flex items-center justify-center p-4">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              className="bg-white rounded-2xl p-6 max-w-sm w-full shadow-2xl relative"
+            >
+              <button 
+                onClick={() => setShowAdminModal(false)}
+                className="absolute top-4 right-4 text-slate-400 hover:text-slate-600"
+              >
+                <X size={20} />
+              </button>
+              <div className="flex flex-col items-center mb-6">
+                <div className="w-12 h-12 bg-imc-blue/10 text-imc-blue rounded-full flex items-center justify-center mb-4">
+                  <Lock size={24} />
+                </div>
+                <h2 className="text-xl font-bold text-slate-800">Admin Access</h2>
+                <p className="text-sm text-slate-500 text-center mt-1">Enter your passcode to access the dashboard</p>
+              </div>
+              <form onSubmit={handleAdminSubmit} className="space-y-4">
+                <div className="relative">
+                  <input 
+                    type={showPassword ? "text" : "password"} 
+                    value={adminCode}
+                    onChange={(e) => setAdminCode(e.target.value)}
+                    placeholder="Enter passcode"
+                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-imc-blue focus:border-transparent text-slate-800 text-center font-mono tracking-widest"
+                    autoFocus
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 p-2"
+                  >
+                    {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                  </button>
+                </div>
+                <button 
+                  type="submit"
+                  className="w-full bg-imc-blue text-white font-bold py-3 rounded-xl hover:bg-imc-blue-dark transition-colors shadow-md"
+                >
+                  Verify Code
+                </button>
+              </form>
+            </motion.div>
+          </div>
         )}
       </AnimatePresence>
 
