@@ -6,6 +6,8 @@ import { getDictionary } from "@/dictionaries";
 import type { Locale } from "@/dictionaries";
 import type { Metadata } from "next";
 
+export const dynamic = 'force-dynamic';
+
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
   const dict = await getDictionary(resolvedParams.lang as Locale);
