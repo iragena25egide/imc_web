@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 import ConfirmModal from "@/components/ui/ConfirmModal";
 
 export default function AdminNewsPage() {
-  const [news, setNews] = useState([]);
+  const [news, setNews] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingId, setEditingId] = useState<number | null>(null);

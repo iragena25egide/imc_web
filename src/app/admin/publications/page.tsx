@@ -6,7 +6,7 @@ import toast from "react-hot-toast";
 import ConfirmModal from "@/components/ui/ConfirmModal";
 
 export default function AdminPublicationsPage() {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isAdding, setIsAdding] = useState(false);
   const [editingId, setEditingId] = useState<number | null>(null);
