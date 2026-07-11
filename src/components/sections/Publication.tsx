@@ -4,20 +4,40 @@ import { motion } from "framer-motion";
 import { Download, FileText, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
+import { useState, useEffect } from "react";
 
 export default function Publication({ limit, dict, dbPublications }: { limit?: number, dict?: any, dbPublications?: any[] }) {
   const params = useParams();
   const lang = params?.lang || "en";
 
-  const items = dbPublications && dbPublications.length > 0 ? dbPublications : (dict?.items || []);
-  const sortedItems = [...items].sort((a: any, b: any) => {
+  const [publications, setPublications] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3005'}/publication`)
+      .then(res => res.json())
+      .then(data => {
+        if (Array.isArray(data) && data.length > 0) {
+          setPublications(data);
+        } else {
+          // fallback to static dict items
+          setPublications(dict?.items || []);
+        }
+        setIsLoading(false);
+      })
+      .catch(() => {
+        setPublications(dict?.items || []);
+        setIsLoading(false);
+      });
+  }, []);
+
+  const sortedItems = [...publications].sort((a: any, b: any) => {
     const dateA = new Date(a.createdAt || a.date || 0).getTime();
     const dateB = new Date(b.createdAt || b.date || 0).getTime();
-    return dateB - dateA; // Newest first
+    return dateB - dateA;
   });
-  const displayedPublications = limit
-    ? sortedItems.slice(0, limit)
-    : sortedItems;
+
+  const displayedPublications = limit ? sortedItems.slice(0, limit) : sortedItems;
 
   return (
     <section
@@ -46,38 +66,46 @@ export default function Publication({ limit, dict, dbPublications }: { limit?: n
         </div>
 
         <div className="max-w-4xl mx-auto space-y-4">
-          {displayedPublications.map((pub: any, index: number) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="flex items-center justify-between p-6 bg-white rounded-2xl shadow-sm border border-slate-200 hover:shadow-lg hover:border-imc-blue/30 transition-all duration-300 group"
-            >
-              <div className="flex items-start gap-5">
-                <div className="p-4 bg-slate-50 border border-slate-100 group-hover:bg-imc-blue/10 text-imc-blue rounded-xl transition-colors">
-                  <FileText className="h-7 w-7" />
-                </div>
-                <div>
-                  <div className="text-xs font-bold text-imc-gold uppercase tracking-widest mb-2">
-                    {pub.category || "Document"}
-                  </div>
-                  <h3 className="text-xl font-bold font-heading text-imc-blue-dark group-hover:text-imc-blue transition-colors">
-                    {pub.title}
-                  </h3>
-                </div>
-              </div>
-              <a
-                href={pub.fileUrl?.startsWith('http') || pub.fileUrl?.startsWith('/') ? pub.fileUrl : `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:3005"}${pub.fileUrl}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-4 text-slate-400 hover:text-white hover:bg-imc-blue rounded-full transition-all duration-300 shadow-sm hover:shadow-md border border-slate-100 block"
+          {isLoading ? (
+            <div className="flex justify-center py-12">
+              <div className="w-8 h-8 border-4 border-imc-blue border-t-transparent rounded-full animate-spin" />
+            </div>
+          ) : displayedPublications.length === 0 ? (
+            <p className="text-center text-slate-400 py-12">No publications available yet.</p>
+          ) : (
+            displayedPublications.map((pub: any, index: number) => (
+              <motion.div
+                key={pub.id || index}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="flex items-center justify-between p-6 bg-white rounded-2xl shadow-sm border border-slate-200 hover:shadow-lg hover:border-imc-blue/30 transition-all duration-300 group"
               >
-                <Download className="h-6 w-6" />
-              </a>
-            </motion.div>
-          ))}
+                <div className="flex items-start gap-5">
+                  <div className="p-4 bg-slate-50 border border-slate-100 group-hover:bg-imc-blue/10 text-imc-blue rounded-xl transition-colors">
+                    <FileText className="h-7 w-7" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-imc-gold uppercase tracking-widest mb-2">
+                      {pub.category || "Document"}
+                    </div>
+                    <h3 className="text-xl font-bold font-heading text-imc-blue-dark group-hover:text-imc-blue transition-colors">
+                      {pub.title}
+                    </h3>
+                  </div>
+                </div>
+                <a
+                  href={pub.fileUrl?.startsWith('http') || pub.fileUrl?.startsWith('/') ? pub.fileUrl : `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:3005"}${pub.fileUrl}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-4 text-slate-400 hover:text-white hover:bg-imc-blue rounded-full transition-all duration-300 shadow-sm hover:shadow-md border border-slate-100 block"
+                >
+                  <Download className="h-6 w-6" />
+                </a>
+              </motion.div>
+            ))
+          )}
         </div>
       </div>
     </section>
