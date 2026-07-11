@@ -33,8 +33,11 @@ export default function WhatsAppWidget({ dict }: { dict?: any }) {
   const handleAdminSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (adminCode === 'imc@admin2026!') {
-      document.cookie = "admin_access=true; path=/";
-      router.push('/admin');
+      // Set cookie with 1-hour expiry for security
+      const expires = new Date(Date.now() + 60 * 60 * 1000).toUTCString();
+      document.cookie = `admin_access=true; expires=${expires}; path=/`;
+      // Hard redirect so middleware reads the fresh cookie immediately (fixes mobile)
+      window.location.href = '/admin';
     } else {
       alert("Invalid code");
       setAdminCode("");
