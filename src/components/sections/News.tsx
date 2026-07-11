@@ -5,12 +5,17 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 
-export default function News({ limit, dict }: { limit?: number, dict?: any }) {
+export default function News({ limit, dict, dbArticles }: { limit?: number, dict?: any, dbArticles?: any[] }) {
   const params = useParams();
   const lang = params?.lang || "en";
 
-  const articles = dict?.articles || [];
-  const displayedArticles = limit ? articles.slice(0, limit) : articles;
+  const articles = dbArticles && dbArticles.length > 0 ? dbArticles : (dict?.articles || []);
+  const sortedArticles = [...articles].sort((a: any, b: any) => {
+    const dateA = new Date(a.createdAt || a.date || 0).getTime();
+    const dateB = new Date(b.createdAt || b.date || 0).getTime();
+    return dateB - dateA; // Newest first
+  });
+  const displayedArticles = limit ? sortedArticles.slice(0, limit) : sortedArticles;
 
   return (
     <section
@@ -51,16 +56,16 @@ export default function News({ limit, dict }: { limit?: number, dict?: any }) {
               <div className="absolute top-0 left-0 w-full h-1 bg-imc-gold transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
 
               <div className="text-xs font-bold tracking-widest uppercase text-imc-gold mb-4">
-                {article.date}
+                {article.createdAt ? new Date(article.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : article.date}
               </div>
               <h3 className="text-2xl font-bold font-heading text-imc-blue-dark mb-4 group-hover:text-imc-blue transition-colors">
                 {article.title}
               </h3>
               <p className="text-slate-600 mb-8 leading-relaxed flex-grow">
-                {article.excerpt}
+                {article.excerpt || (article.content ? article.content.replace(/<[^>]*>?/gm, '').substring(0, 150) + '...' : '')}
               </p>
               <Link
-                href={`/${lang}/news/${article.slug}`}
+                href={`/${lang}/news/${article.slug || (article.title ? article.title.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '') : article.id)}`}
                 className="text-sm tracking-widest uppercase text-imc-blue-dark font-bold group-hover:text-imc-blue transition-colors inline-flex items-center self-start mt-auto"
               >
                 {dict?.readMore || "Read More"}
