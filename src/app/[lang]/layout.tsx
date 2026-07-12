@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     metadataBase: new URL('https://www.imcrwanda.com'),
     title: {
       default: title,
-      template: `%s | IMC Rwanda`,
+      template: `%s | Interafrican Mining Corporation`,
     },
     description: description,
     keywords: ["Mining", "Rwanda", "Coltan", "Cassiterite", "Sustainable Mining", "IMC", "Interafrican Mining Corporation", "Minerals"],
@@ -29,12 +29,13 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       title: title,
       description: description,
       url: 'https://www.imcrwanda.com',
-      siteName: 'IMC Rwanda',
+      siteName: 'Interafrican Mining Corporation',
       images: [
         {
           url: '/logo.png',
-          width: 800,
-          height: 600,
+          width: 512,
+          height: 512,
+          alt: 'Interafrican Mining Corporation Logo',
         },
       ],
       locale: resolvedParams.lang,
@@ -53,8 +54,53 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         'rw': 'https://www.imcrwanda.com/rw',
       },
     },
+    icons: {
+      icon: '/logo-icon.png',
+      shortcut: '/logo-icon.png',
+      apple: '/logo-icon.png',
+    },
+    verification: {
+      google: 'googlec260c118dee202b2',
+    },
   };
 }
+
+// JSON-LD structured data for Google to show logo and organization info
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Interafrican Mining Corporation",
+  "alternateName": "IMC Rwanda",
+  "url": "https://www.imcrwanda.com",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://www.imcrwanda.com/logo.png",
+    "width": 512,
+    "height": 512,
+  },
+  "image": "https://www.imcrwanda.com/logo.png",
+  "description": "Leading sustainable mining operations in Rwanda, specializing in cassiterite and coltan extraction.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "RW",
+    "addressRegion": "Rwanda",
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+250781579376",
+    "contactType": "customer service",
+  },
+  "sameAs": [
+    "https://www.imcrwanda.com",
+  ],
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Interafrican Mining Corporation",
+  "url": "https://www.imcrwanda.com",
+};
 
 export default async function RootLayout({
   children,
@@ -70,6 +116,17 @@ export default async function RootLayout({
       lang={resolvedParams.lang}
       className={`${libreFranklin.variable} h-full antialiased`}
     >
+      <head>
+        {/* JSON-LD structured data for Google Search */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+      </head>
       <body className="min-h-full flex flex-col font-sans">
         {children}
         <CookieBanner dict={dict.cookieBanner} />
